@@ -8,18 +8,36 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body className="min-h-screen bg-gray-50 text-gray-900">
-        <header className="border-b bg-white">
-          <nav className="mx-auto max-w-5xl px-4 py-3 flex gap-4">
-            <Link href="/" className="font-semibold">Inicio</Link>
-            <Link href="/banco/inicial">Inicial</Link>
-            <Link href="/banco/intermedio">Intermedio</Link>
-            <Link href="/banco/avanzado">Avanzado</Link>
-            <Link href="/banco/bases">Bases</Link>
+    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
+      <body className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+        {/* Header */}
+        <header className="border-b bg-white dark:bg-gray-800 shadow-sm">
+          <nav className="mx-auto max-w-5xl px-4 py-3 flex flex-wrap gap-4">
+            <Link href="/" className="font-semibold hover:underline">
+              Inicio
+            </Link>
+            <Link href="/banco/inicial" className="hover:underline">
+              Inicial
+            </Link>
+            <Link href="/banco/intermedio" className="hover:underline">
+              Intermedio
+            </Link>
+            <Link href="/banco/avanzado" className="hover:underline">
+              Avanzado
+            </Link>
+            <Link href="/banco/bases" className="hover:underline">
+              Bases
+            </Link>
           </nav>
         </header>
+
+        {/* Contenido principal */}
         <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+
+        {/* Footer */}
+        <footer className="border-t bg-white dark:bg-gray-800 py-4 mt-12 text-center text-sm text-gray-600 dark:text-gray-400">
+          © {new Date().getFullYear()} Concurso Interno de Programación UPeU Lima
+        </footer>
       </body>
     </html>
   );
