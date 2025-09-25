@@ -16,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/banco/inicial">Inicial</Link>
             <Link href="/banco/intermedio">Intermedio</Link>
             <Link href="/banco/avanzado">Avanzado</Link>
+            <Link href="/banco/bases">Bases</Link>
           </nav>
         </header>
         <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
