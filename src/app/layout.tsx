@@ -17,14 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Inicio
             </Link>
             <Link href="/banco/inicial" className="hover:underline">
-              Inicial
+              Banco de Preguntas
             </Link>
-            <Link href="/banco/intermedio" className="hover:underline">
-              Intermedio
-            </Link>
-            <Link href="/banco/avanzado" className="hover:underline">
-              Avanzado
-            </Link>
+            
             <Link href="/banco/bases" className="hover:underline">
               Bases
             </Link>
@@ -32,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </header>
 
         {/* Contenido principal */}
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
+        <main className="min-h-screen">{children}</main>
 
         {/* Footer */}
         <footer className="border-t bg-white dark:bg-gray-800 py-4 mt-12 text-center text-sm text-gray-600 dark:text-gray-400">

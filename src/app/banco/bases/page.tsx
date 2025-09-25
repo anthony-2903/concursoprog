@@ -1,25 +1,52 @@
 "use client";
 
-import React from "react";
+import { Menu } from "lucide-react";
+import React, { useState } from "react";
+
 
 export default function Page() {
+  const [open, setOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 py-12">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Cabecera */}
+
+       
+
         <header className="mb-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
             Bases del Concurso Interno de Programación — UPeU Lima 2025-2
           </h1>
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-            Fecha: <strong>01 de octubre de 2025</strong> · Horario: <strong>17:00 — 18:40</strong>
+            Fecha: <strong>01 de octubre de 2025</strong> · Horario:{" "}
+            <strong>17:00 — 18:40</strong>
           </p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* TOC / Resumen */}
+
+         
+
           <aside className="lg:col-span-1">
-            <div className="sticky top-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 p-4 shadow-sm">
+
+           
+            <button
+              onClick={() => setOpen(!open)}
+              className="lg:hidden flex items-center gap-2 p-2 border rounded-md mb-3 text-slate-700 dark:text-slate-300"
+            >
+              <Menu size={20} />
+              <span>Contenido</span>
+            </button>
+
+           
+            <div
+              className={`
+                ${open ? "block" : "hidden"}
+                lg:block
+                sticky top-6 rounded-xl border border-gray-200 dark:border-gray-700 
+                bg-white dark:bg-slate-800 p-4 shadow-sm
+              `}
+            >
               <h2 className="font-semibold mb-3">Contenido</h2>
               <nav className="flex flex-col gap-2 text-sm">
                 <a href="#introduccion" className="hover:underline text-slate-700 dark:text-slate-300">1. Introducción</a>
@@ -35,16 +62,25 @@ export default function Page() {
               </nav>
 
               <div className="mt-4 text-xs text-slate-500 dark:text-slate-400">
-                <p><strong>Lenguaje oficial:</strong> Java 17+</p>
-                <p><strong>Tiempo por problema:</strong> 5 minutos</p>
-                <p><strong>Material permitido:</strong> papel y lápiz</p>
+                <p>
+                  <strong>Lenguaje oficial:</strong> Java 17+
+                </p>
+                <p>
+                  <strong>Tiempo por problema:</strong> 5 minutos
+                </p>
+                <p>
+                  <strong>Material permitido:</strong> papel y lápiz
+                </p>
               </div>
             </div>
           </aside>
 
-          {/* Contenido principal */}
+        
           <article className="lg:col-span-3 space-y-6">
-            <section id="introduccion" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="introduccion"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>1. Introducción</h2>
               <p>
                 El Concurso Interno de Programación UPeU Lima 2025-2 tiene como objetivo promover el desarrollo de habilidades en lógica,
@@ -53,26 +89,43 @@ export default function Page() {
               </p>
               <p>
                 El evento fomenta el pensamiento lógico, la creatividad y el trabajo en equipo, además de identificar y reconocer el talento
-                estudiantil en programación. Se rige por principios de orden y disciplina, en armonía con: <em>“Pero hágase todo decentemente y con orden”</em> (1 Corintios 14:40).
+                estudiantil en programación. Se rige por principios de orden y disciplina, en armonía con:{" "}
+                <em>“Pero hágase todo decentemente y con orden”</em> (1 Corintios 14:40).
               </p>
             </section>
 
-            <section id="alcance" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="alcance"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>2. Alcance del Concurso</h2>
               <p>Dirigido a estudiantes de Ingeniería de Sistemas, Ingeniería de Software o carreras afines de la UPeU.</p>
             </section>
 
-            <section id="fecha-duracion" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="fecha-duracion"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>3. Fecha y Duración</h2>
-              <p><strong>01 de octubre de 2025</strong>, de <strong>5:00 pm a 6:40 pm</strong>.</p>
+              <p>
+                <strong>01 de octubre de 2025</strong>, de <strong>5:00 pm a 6:40 pm</strong>.
+              </p>
             </section>
 
-            <section id="etapas" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="etapas"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>4. Etapas del Concurso</h2>
-              <p>El certamen se desarrollará mediante eliminaciones simples: el equipo ganador avanza a la siguiente ronda hasta definir al campeón.</p>
+              <p>
+                El certamen se desarrollará mediante eliminaciones simples: el equipo ganador avanza a la siguiente ronda hasta definir al campeón.
+              </p>
             </section>
 
-            <section id="equipos" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="equipos"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>5. Formación de Equipos</h2>
               <ul>
                 <li>Cada equipo estará compuesto por <strong>2 a 3 participantes</strong>.</li>
@@ -80,7 +133,10 @@ export default function Page() {
               </ul>
             </section>
 
-            <section id="caracteristicas" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="caracteristicas"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>6. Acerca del Concurso</h2>
               <ul>
                 <li>Se desarrollará en tiempo real; <strong>límite de 5 minutos</strong> por algoritmo/problema.</li>
@@ -92,53 +148,70 @@ export default function Page() {
               </ul>
             </section>
 
-            <section id="criterios" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="criterios"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>7. Criterios de Evaluación</h2>
               <ul>
-                <li><strong>Eficiencia:</strong> tiempo de ejecución y uso razonable de recursos.</li>
-                <li><strong>Exactitud:</strong> la solución debe ser correcta y superar los casos de prueba definidos por el jurado.</li>
+                <li>
+                  <strong>Eficiencia:</strong> tiempo de ejecución y uso razonable de recursos.
+                </li>
+                <li>
+                  <strong>Exactitud:</strong> la solución debe ser correcta y superar los casos de prueba definidos por el jurado.
+                </li>
                 <li>Se podrá otorgar puntuación por claridad del código, comentarios y estrategia empleada.</li>
               </ul>
             </section>
 
-            <section id="premiacion" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="premiacion"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>8. Premiación</h2>
               <ul>
-                <li>Primer Lugar: <strong>S/ 300.00</strong> (sujeto a comprobante fiscal según indicaciones de la comisión organizadora).</li>
-                <li>Segundo Lugar: <strong>Mención honrosa</strong>.</li>
+                <li>
+                  Primer Lugar: <strong>S/ 300.00</strong> (sujeto a comprobante fiscal según indicaciones de la comisión organizadora).
+                </li>
+                <li>
+                  Segundo Lugar: <strong>Mención honrosa</strong>.
+                </li>
               </ul>
             </section>
 
-            <section id="inscripcion" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="inscripcion"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>9. Requisitos de Inscripción</h2>
-              <p>Los equipos deben completar el formulario oficial proporcionado por la Escuela Profesional de Ingeniería de Sistemas antes de la fecha límite indicada por la organización.</p>
+              <p>
+                Los equipos deben completar el formulario oficial proporcionado por la Escuela Profesional de Ingeniería de Sistemas antes de la fecha límite indicada por la organización.
+              </p>
             </section>
 
-            <section id="finales" className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow">
+            <section
+              id="finales"
+              className="prose prose-slate dark:prose-invert p-6 rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-slate-800 shadow"
+            >
               <h2>10. Disposiciones Finales</h2>
               <ul>
-                <li>El jurado estará compuesto por el docente responsable de Programación Orientada a Objetos y/o por la comisión designada.</li>
-                <li>El fallo del jurado será <strong>inapelable y definitivo</strong>.</li>
-                <li>Los participantes están obligados a acatar todas las normas establecidas en estas bases.</li>
+                <li>
+                  El jurado estará compuesto por el docente responsable de Programación Orientada a Objetos y/o por la comisión designada.
+                </li>
+                <li>
+                  El fallo del jurado será <strong>inapelable y definitivo</strong>.
+                </li>
+                <li>
+                  Los participantes están obligados a acatar todas las normas establecidas en estas bases.
+                </li>
               </ul>
             </section>
 
-            {/* Pie */}
-            <div className="text-sm text-slate-600 dark:text-slate-400"> 
-              <p className="mb-2">Si quieres, puedo:</p>
-              <ul className="list-disc pl-5">
-                <li>Generar una versión imprimible/PDF con estilos de impresión.</li>
-                <li>Añadir un botón para cambiar entre modo claro/oscuro de forma manual.</li>
-                <li>Crear una versión con secciones colapsables o con numeración automática.</li>
-              </ul>
-            </div>
-
+            
           </article>
         </div>
 
-        <footer className="mt-10 text-center text-sm text-slate-500 dark:text-slate-400">
-          <p>© UPeU — Organización del Concurso Interno de Programación 2025-2</p>
-        </footer>
+       
       </div>
     </main>
   );
