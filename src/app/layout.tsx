@@ -13,14 +13,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Header */}
         <header className="border-b bg-white dark:bg-gray-800 shadow-sm">
           <nav className="mx-auto max-w-5xl px-4 py-3 flex flex-wrap gap-4">
-            <Link href="/" className="font-semibold hover:underline">
+            <Link
+              href="/"
+              className="font-semibold hover:text-blue-500 transition-colors"
+            >
               Inicio
             </Link>
-            <Link href="/banco/inicial" className="hover:underline">
+            <Link
+              href="/banco/inicial"
+              className="hover:text-blue-500 transition-colors"
+            >
               Banco de Preguntas
             </Link>
-            
-            <Link href="/banco/bases" className="hover:underline">
+            <Link
+              href="/banco/bases"
+              className="hover:text-blue-500 transition-colors"
+            >
               Bases
             </Link>
           </nav>
