@@ -10,15 +10,17 @@ export default function Header() {
   return (
     <header className="border-b bg-white dark:bg-gray-800 shadow-sm">
       <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-      <div className="h-10 sm:h-12 md:h-14 lg:h-16 flex items-center px-2">
+       <div className="h-12 sm:h-14 md:h-16 flex items-center px-2">
   <Image
     src="/images/lgsistemas.png"
     alt="Logo ConcursoProg"
     width={200}
     height={200}
+    priority
     className="h-full w-auto rounded"
   />
 </div>
+
 
 
         {/* Menú en pantallas grandes */}
