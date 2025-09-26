@@ -1,9 +1,13 @@
+import Header from "@/components/Header";
 import "./globals.css";
-import Link from "next/link";
+
 
 export const metadata = {
   title: "ConcursoProg",
   description: "Banco de preguntas de programación",
+  icons: {
+    icon: "/images/lgsistemas.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -11,28 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <body className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
         {/* Header */}
-        <header className="border-b bg-white dark:bg-gray-800 shadow-sm">
-          <nav className="mx-auto max-w-5xl px-4 py-3 flex flex-wrap gap-4">
-            <Link
-              href="/"
-              className="font-semibold hover:text-blue-500 transition-colors"
-            >
-              Inicio
-            </Link>
-            <Link
-              href="/banco/inicial"
-              className="hover:text-blue-500 transition-colors"
-            >
-              Banco de Preguntas
-            </Link>
-            <Link
-              href="/banco/bases"
-              className="hover:text-blue-500 transition-colors"
-            >
-              Bases
-            </Link>
-          </nav>
-        </header>
+        <Header />
 
         {/* Contenido principal */}
         <main className="min-h-screen">{children}</main>
