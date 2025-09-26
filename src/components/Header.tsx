@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -10,33 +11,31 @@ export default function Header() {
   return (
     <header className="border-b bg-white dark:bg-gray-800 shadow-sm">
       <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-       <div className="h-12 sm:h-14 md:h-16 flex items-center px-2">
-  <Image
-    src="/images/lgsistemas.png"
-    alt="Logo ConcursoProg"
-    width={200}
-    height={200}
-    priority
-    className="h-full w-auto rounded"
-  />
-</div>
-
-
-
-        {/* Menú en pantallas grandes */}
-        <div className="hidden md:flex gap-6">
-          <a href="/" className="font-semibold hover:text-blue-500">
-            Inicio
-          </a>
-          <a href="/banco/inicial" className="hover:text-blue-500">
-            Banco de Preguntas
-          </a>
-          <a href="/banco/bases" className="hover:text-blue-500">
-            Bases
-          </a>
+        <div className="h-12 sm:h-14 md:h-16 flex items-center px-2">
+          <Link href="/">
+            <Image
+              src="/images/lgsistemas.png"
+              alt="Logo ConcursoProg"
+              width={200}
+              height={200}
+              priority
+              className="h-full w-auto rounded"
+            />
+          </Link>
         </div>
 
-        {/* Botón menú hamburguesa (solo móvil) */}
+        <div className="hidden md:flex gap-6">
+          <Link href="/" className="font-semibold hover:text-blue-500">
+            Inicio
+          </Link>
+          <Link href="/banco/inicial" className="hover:text-blue-500">
+            Banco de Preguntas
+          </Link>
+          <Link href="/banco/bases" className="hover:text-blue-500">
+            Bases
+          </Link>
+        </div>
+
         <button
           className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -48,15 +47,18 @@ export default function Header() {
       {/* Menú desplegable en móvil */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-start px-6 py-4 gap-4 bg-white dark:bg-gray-800 border-t">
-          <a href="/" className="font-semibold hover:text-blue-500 w-full">
+          <Link href="/" className="font-semibold hover:text-blue-500 w-full">
             Inicio
-          </a>
-          <a href="/banco/inicial" className="hover:text-blue-500 w-full">
+          </Link>
+          <Link
+            href="/banco/inicial"
+            className="hover:text-blue-500 w-full"
+          >
             Banco de Preguntas
-          </a>
-          <a href="/banco/bases" className="hover:text-blue-500 w-full">
+          </Link>
+          <Link href="/banco/bases" className="hover:text-blue-500 w-full">
             Bases
-          </a>
+          </Link>
         </div>
       )}
     </header>
