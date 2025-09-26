@@ -1,4 +1,4 @@
-import type { Question } from "@/types/question";
+import { Question } from "@/types/question";
 
 export const inicial: Question[] = [
   {

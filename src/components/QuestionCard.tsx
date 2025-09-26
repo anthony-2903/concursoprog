@@ -12,7 +12,9 @@ export function QuestionCard({ q, index }: { q: Question; index: number }) {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 my-[10px] shadow-sm hover:shadow-md transition"
     >
-      <h3 className="font-semibold">#{q.id} — {q.title}</h3>
+      <h3 className="font-semibold">
+        #{q.id} — {q.title}
+      </h3>
       <p className="mt-2 whitespace-pre-line text-sm leading-relaxed">{q.body}</p>
     </motion.article>
   );
