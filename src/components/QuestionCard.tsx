@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 type Question = { id: number; title: string; body: string };
 
 export function QuestionCard({ q, index }: { q: Question; index: number }) {
-  const direction = index % 2 === 0 ? -100 : 100; // par: izquierda, impar: derecha
+  const direction = index % 2 === 0 ? -100 : 100; 
   return (
     <motion.article
       initial={{ opacity: 0, x: direction }}
