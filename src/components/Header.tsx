@@ -11,31 +11,36 @@ export default function Header() {
   return (
     <header className="border-b bg-white dark:bg-gray-800 shadow-sm">
       <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
         <div className="h-12 sm:h-14 md:h-16 flex items-center px-2">
-          <Link href="/">
-            <Image
-              src="/images/lgsistemas.png"
-              alt="Logo ConcursoProg"
-              width={200}
-              height={200}
-              priority
-              className="h-full w-auto rounded"
-            />
+          <Link href="/" legacyBehavior>
+            <a>
+              <Image
+                src="/images/lgsistemas.png"
+                alt="Logo ConcursoProg"
+                width={200}
+                height={200}
+                priority
+                className="h-full w-auto rounded"
+              />
+            </a>
           </Link>
         </div>
 
+        {/* Menú de escritorio */}
         <div className="hidden md:flex gap-6">
-          <Link href="/" className="font-semibold hover:text-blue-500">
-            Inicio
+          <Link href="/" legacyBehavior>
+            <a className="font-semibold hover:text-blue-500">Inicio</a>
           </Link>
-          <Link href="/banco/inicial" className="hover:text-blue-500">
-            Banco de Preguntas
+          <Link href="/banco/inicial" legacyBehavior>
+            <a className="hover:text-blue-500">Banco de Preguntas</a>
           </Link>
-          <Link href="/banco/bases" className="hover:text-blue-500">
-            Bases
+          <Link href="/banco/bases" legacyBehavior>
+            <a className="hover:text-blue-500">Bases</a>
           </Link>
         </div>
 
+        {/* Botón menú hamburguesa */}
         <button
           className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -44,20 +49,17 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Menú desplegable en móvil */}
+      {/* Menú móvil */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-start px-6 py-4 gap-4 bg-white dark:bg-gray-800 border-t">
-          <Link href="/" className="font-semibold hover:text-blue-500 w-full">
-            Inicio
+          <Link href="/" legacyBehavior>
+            <a className="font-semibold hover:text-blue-500 w-full">Inicio</a>
           </Link>
-          <Link
-            href="/banco/inicial"
-            className="hover:text-blue-500 w-full"
-          >
-            Banco de Preguntas
+          <Link href="/banco/inicial" legacyBehavior>
+            <a className="hover:text-blue-500 w-full">Banco de Preguntas</a>
           </Link>
-          <Link href="/banco/bases" className="hover:text-blue-500 w-full">
-            Bases
+          <Link href="/banco/bases" legacyBehavior>
+            <a className="hover:text-blue-500 w-full">Bases</a>
           </Link>
         </div>
       )}
