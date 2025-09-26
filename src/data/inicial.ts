@@ -1,5 +1,6 @@
-// src/data/inicial.ts
-export const inicial = [
+import type { Question } from "@/types/question";
+
+export const inicial: Question[] = [
   {
     id: 1,
     title: " Escribe un programa que muestre por consola (con un print) los números de 1 a 15 (ambos incluidos y con un salto de línea entre cada impresión), sustituyendo los siguientes:",
