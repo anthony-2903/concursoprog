@@ -47,9 +47,9 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Botón menú hamburguesa */}
+        {/* Botón menú hamburguesa (solo móviles) */}
         <button
-          className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+          className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Abrir menú"
         >
@@ -63,18 +63,21 @@ export default function Header() {
           <Link
             href="/"
             className="font-semibold hover:text-blue-500 w-full transform transition duration-200 hover:scale-105"
+            onClick={() => setMenuOpen(false)}
           >
             Inicio
           </Link>
           <Link
             href="/banco/inicial"
             className="hover:text-blue-500 w-full transform transition duration-200 hover:scale-105"
+            onClick={() => setMenuOpen(false)}
           >
             Banco de Preguntas
           </Link>
           <Link
             href="/banco/bases"
             className="hover:text-blue-500 w-full transform transition duration-200 hover:scale-105"
+            onClick={() => setMenuOpen(false)}
           >
             Bases
           </Link>
