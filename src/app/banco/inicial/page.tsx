@@ -17,7 +17,7 @@ export default function Page() {
         Banco de Preguntas
       </motion.h1>
 
-      {/* Lista de preguntas */}
+      
       <QuestionList items={inicial} />
     </section>
   );
