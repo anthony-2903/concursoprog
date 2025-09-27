@@ -20,6 +20,7 @@ export default function Page() {
             fill
             className="object-cover"
             priority
+            quality={100}
           />
         </motion.div>
       </div>
@@ -28,8 +29,7 @@ export default function Page() {
       <section className="max-w-5xl mx-auto px-6 py-12">
         <h2 className="text-2xl font-bold mb-4">Bienvenido</h2>
         <p>
-          Explora el banco de preguntas por niveles: Inicial, Intermedio y
-          Avanzado.
+          Explora el banco de preguntas por niveles: Inicial
         </p>
       </section>
     </main>

@@ -10,7 +10,7 @@ export function QuestionCard({ q, index }: { q: Question; index: number }) {
       initial={{ opacity: 0, x: direction }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 my-[10px] shadow-sm hover:shadow-md transition"
+      className="max-w-x1 mx-auto rounded-xl border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 my-3 shadow-sm hover:shadow-md transition"
     >
       <h3 className="font-semibold">
         #{q.id} — {q.title}
@@ -22,7 +22,7 @@ export function QuestionCard({ q, index }: { q: Question; index: number }) {
 
 export function QuestionList({ items }: { items: Question[] }) {
   return (
-    <div>
+    <div className="px-4">
       {items.map((q, idx) => (
         <QuestionCard key={q.id} q={q} index={idx} />
       ))}
