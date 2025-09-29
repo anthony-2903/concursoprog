@@ -2,9 +2,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
+    if (process.env.NODE_ENV === "development") {
+      return []; // 🔹 No aplicar headers en desarrollo
+    }
+
     return [
       {
-        source: "/(.*)", // se aplica a todas las rutas
+        source: "/(.*)",
         headers: [
           {
             key: "Strict-Transport-Security",
