@@ -1,29 +1,29 @@
-import Header from "@/components/Header";
+
+import Footer from "@/components/Footer";
 import "./globals.css";
+import Header from "@/components/Header";
 
 
 export const metadata = {
-  title: "ConcursoProg",
-  description: "Banco de preguntas de programación",
-  icons: {
-    icon: "/images/lgsistemas.png",
-  },
+  title: "Concurso de Programación",
+  description: "Banco de preguntas UPeU",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="es" className="scroll-smooth" suppressHydrationWarning>
-      <body className="min-h-screen bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-        {/* Header */}
+    <html lang="es">
+      <body className="flex flex-col min-h-screen bg-gray-900 text-white">
+   
         <Header />
 
-        {/* Contenido principal */}
-        <main className="min-h-screen">{children}</main>
+      
+        <main className="flex-grow">{children}</main>
 
-        {/* Footer */}
-        <footer className="border-t bg-white dark:bg-gray-800 py-4 mt-12 text-center text-sm text-gray-600 dark:text-gray-400">
-          © {new Date().getFullYear()} Concurso Interno de Programación UPeU Lima
-        </footer>
+        <Footer />
       </body>
     </html>
   );
