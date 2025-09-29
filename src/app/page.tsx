@@ -57,7 +57,8 @@ export default function Page() {
           transition={{ duration: 1, delay: 0.4 }}
           className="italic text-slate-500 dark:text-slate-400 mb-8"
         >
-          "La programación no es solo código, es creatividad y lógica en acción."
+       &quot;La programación no es solo código, es creatividad y lógica en acción.&quot;
+
         </motion.p>
 
         {/* Botones con animación */}
