@@ -66,7 +66,7 @@ export default function Page() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/bases"
+            href="/banco/bases"
             className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
             <FileText size={20} />
@@ -75,7 +75,7 @@ export default function Page() {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="/banco"
+            href="/banco/inicial"
             className="flex items-center gap-2 px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition"
           >
             <Database size={20} />
