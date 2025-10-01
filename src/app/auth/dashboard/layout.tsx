@@ -39,7 +39,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </button>
       </aside>
 
-      {/* Contenido */}
+      {/* Contenido principal */}
       <main className="flex-1 p-6 bg-gray-100 dark:bg-gray-800">{children}</main>
     </div>
   );
