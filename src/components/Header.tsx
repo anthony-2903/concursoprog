@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,6 +45,13 @@ export default function Header() {
           >
             Bases
           </Link>
+          <Link
+            href="/auth/login"
+            className="hover:text-blue-500 transform transition duration-200 hover:scale-105 flex items-center gap-1"
+          >
+            <LogIn size={18} />
+            Iniciar Sesión
+          </Link>
         </div>
 
         {/* Botón menú hamburguesa (solo móviles) */}
@@ -80,6 +87,14 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
           >
             Bases
+          </Link>
+          <Link
+            href="/auth/login"
+            className="hover:text-blue-500 w-full transform transition duration-200 hover:scale-105 flex items-center gap-1"
+            onClick={() => setMenuOpen(false)}
+          >
+            <LogIn size={18} />
+            Iniciar Sesión
           </Link>
         </div>
       )}
