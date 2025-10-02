@@ -15,7 +15,7 @@ export default function LoginPage() {
     // Usuario y contraseña simulados
     if (usuario === "admin" && password === "1234") {
       localStorage.setItem("auth", "true");
-      router.push("/dashboard");
+      router.push("/auth/dashboard");
     } else {
       setError("Usuario o contraseña incorrectos");
     }
