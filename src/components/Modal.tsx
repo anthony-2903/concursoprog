@@ -13,6 +13,20 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: ModalProps) {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Detectar tema del sistema
+  useEffect(() => {
+    const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(isDark);
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   const [formData, setFormData] = useState<Cliente>({
     id: cliente?.id,
     nombre: cliente?.nombre || '',
@@ -22,7 +36,7 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
     direccion: cliente?.direccion || '',
   });
 
-  // Actualizar formData si cambia el cliente (ej: al abrir modal de edición)
+  // Actualizar formData si cambia el cliente
   useEffect(() => {
     if (cliente) {
       setFormData({
@@ -75,19 +89,38 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
     >
       <div
         style={{
-          backgroundColor: 'white',
+          backgroundColor: darkMode ? '#1f2937' : '#fff',
           padding: '2rem',
           borderRadius: '0.5rem',
           width: '400px',
           maxHeight: '80vh',
           overflowY: 'auto',
           boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+          color: darkMode ? '#f9fafb' : '#111827',
         }}
       >
-        <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>{title}</h2>
+        <h2
+          style={{
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            marginBottom: '1rem',
+            color: darkMode ? '#f9fafb' : '#111827',
+          }}
+        >
+          {title}
+        </h2>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Nombre</label>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '0.5rem',
+                fontWeight: '600',
+                color: darkMode ? '#9ca3af' : '#4b5563',
+              }}
+            >
+              Nombre
+            </label>
             <input
               type="text"
               name="nombre"
@@ -98,13 +131,24 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
                 width: '100%',
                 padding: '0.5rem',
                 borderRadius: '0.25rem',
-                border: '1px solid #d1d5db',
+                border: `1px solid ${darkMode ? '#374151' : '#d1d5db'}`,
+                backgroundColor: darkMode ? '#111827' : '#fff',
+                color: darkMode ? '#f9fafb' : '#111827',
                 fontSize: '1rem',
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Apellido</label>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '0.5rem',
+                fontWeight: '600',
+                color: darkMode ? '#9ca3af' : '#4b5563',
+              }}
+            >
+              Apellido
+            </label>
             <input
               type="text"
               name="apellido"
@@ -115,13 +159,24 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
                 width: '100%',
                 padding: '0.5rem',
                 borderRadius: '0.25rem',
-                border: '1px solid #d1d5db',
+                border: `1px solid ${darkMode ? '#374151' : '#d1d5db'}`,
+                backgroundColor: darkMode ? '#111827' : '#fff',
+                color: darkMode ? '#f9fafb' : '#111827',
                 fontSize: '1rem',
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Teléfono</label>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '0.5rem',
+                fontWeight: '600',
+                color: darkMode ? '#9ca3af' : '#4b5563',
+              }}
+            >
+              Teléfono
+            </label>
             <input
               type="text"
               name="telefono"
@@ -132,13 +187,24 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
                 width: '100%',
                 padding: '0.5rem',
                 borderRadius: '0.25rem',
-                border: '1px solid #d1d5db',
+                border: `1px solid ${darkMode ? '#374151' : '#d1d5db'}`,
+                backgroundColor: darkMode ? '#111827' : '#fff',
+                color: darkMode ? '#f9fafb' : '#111827',
                 fontSize: '1rem',
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Correo</label>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '0.5rem',
+                fontWeight: '600',
+                color: darkMode ? '#9ca3af' : '#4b5563',
+              }}
+            >
+              Correo
+            </label>
             <input
               type="email"
               name="correo"
@@ -149,13 +215,24 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
                 width: '100%',
                 padding: '0.5rem',
                 borderRadius: '0.25rem',
-                border: '1px solid #d1d5db',
+                border: `1px solid ${darkMode ? '#374151' : '#d1d5db'}`,
+                backgroundColor: darkMode ? '#111827' : '#fff',
+                color: darkMode ? '#f9fafb' : '#111827',
                 fontSize: '1rem',
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>Dirección</label>
+            <label
+              style={{
+                display: 'block',
+                marginBottom: '0.5rem',
+                fontWeight: '600',
+                color: darkMode ? '#9ca3af' : '#4b5563',
+              }}
+            >
+              Dirección
+            </label>
             <input
               type="text"
               name="direccion"
@@ -166,7 +243,9 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
                 width: '100%',
                 padding: '0.5rem',
                 borderRadius: '0.25rem',
-                border: '1px solid #d1d5db',
+                border: `1px solid ${darkMode ? '#374151' : '#d1d5db'}`,
+                backgroundColor: darkMode ? '#111827' : '#fff',
+                color: darkMode ? '#f9fafb' : '#111827',
                 fontSize: '1rem',
               }}
             />
@@ -177,7 +256,7 @@ export default function Modal({ isOpen, onClose, title, cliente, onConfirm }: Mo
               onClick={onClose}
               style={{
                 padding: '0.5rem 1rem',
-                backgroundColor: '#6b7280',
+                backgroundColor: darkMode ? '#6b7280' : '#6b7280',
                 color: 'white',
                 border: 'none',
                 borderRadius: '0.25rem',
