@@ -20,7 +20,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           Proyección Social
         </Link>
            <Link href="/auth/dashboard/crud" className="hover:text-blue-400">
-          API
+          API test
         </Link>
       </aside>
 
