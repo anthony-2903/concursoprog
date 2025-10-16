@@ -13,11 +13,14 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <Link href="/auth/dashboard/activate" className="hover:text-blue-400">
           Activate
         </Link>
-        <Link href="/auth/dashboardcultura" className="hover:text-blue-400">
+        <Link href="/auth/dashboard/cultura" className="hover:text-blue-400">
           Cultura
         </Link>
         <Link href="/auth/dashboard/proyeccion-social" className="hover:text-blue-400">
           Proyección Social
+        </Link>
+           <Link href="/auth/dashboard/crud" className="hover:text-blue-400">
+          API
         </Link>
       </aside>
 
