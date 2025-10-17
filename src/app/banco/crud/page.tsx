@@ -14,7 +14,7 @@ export default function CrudPage() {
   // 🔄 Cargar clientes
   const fetchClientes = async () => {
     try {
-      const res = await fetch('http://54.144.206.75:3000/api/clientes');
+      const res = await fetch('http://44.196.122.187:3000/api/clientes');
       if (!res.ok) throw new Error('Error al cargar');
       const data = await res.json();
       setClientes(data);
@@ -46,14 +46,14 @@ export default function CrudPage() {
 const handleAddOrUpdate = async (data: Cliente) => {
   if (data.id !== undefined) {
     // Editar
-    await fetch(`http://54.144.206.75:3000/api/clientes/${data.id}`, {
+    await fetch(`http://44.196.122.187:3000/api/clientes/${data.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
   } else {
     // Agregar
-    await fetch('http://54.144.206.75:3000/api/clientes', {
+    await fetch('http://44.196.122.187:3000/api/clientes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -74,7 +74,7 @@ const handleAddOrUpdate = async (data: Cliente) => {
   const handleDelete = async (id: number) => {
     if (!confirm('¿Eliminar cliente?')) return;
     try {
-      const res = await fetch(`http://54.144.206.75:3000/api/clientes/${id}`, {
+      const res = await fetch(`http://44.196.122.187:3000/api/clientes/${id}`, {
         method: 'DELETE',
       });
       if (res.ok) {
