@@ -81,6 +81,15 @@ export default function Page() {
             <Database size={20} />
             Banco de Preguntas
           </motion.a>
+           <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/banco/crud"
+            className="flex items-center gap-2 px-6 py-3 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 transition"
+          >
+            <Database size={20} />
+            crud
+          </motion.a>
         </div>
       </motion.section>
 
