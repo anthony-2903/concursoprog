@@ -13,7 +13,7 @@ interface Cliente {
 
 // Función para obtener los clientes desde tu backend en la nube
 async function getClientes() {
-  const res = await fetch('http://54.144.206.75:3000/api/clientes', {
+  const res = await fetch('http://44.196.122.187:3000/api/clientes', {
     cache: 'no-store', // Evita caché en desarrollo
   });
 
@@ -65,7 +65,7 @@ export default function ApiPage() {
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">🎬 Videoclub - Vista API</h1>
         <p className="text-gray-600 mb-6">
-          Datos consumidos desde: <code className="bg-gray-200 px-2 py-1 rounded">http://54.144.206.75:3000</code>
+          Datos consumidos desde: <code className="bg-gray-200 px-2 py-1 rounded">http://44.196.122.187:3000</code>
         </p>
 
         <Suspense fallback={<p className="text-gray-500">Cargando...</p>}>
